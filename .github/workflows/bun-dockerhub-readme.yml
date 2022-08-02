@@ -1,0 +1,22 @@
+name: bun-dockerhub
+on:
+  push:
+    paths:
+      - README.md
+    branches:
+      - main
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    # if: github.repository_owner == 'oven-sh'
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+    
+      - name: Dockerhub Readme
+        uses: ms-jpq/sync-dockerhub-readme@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/bun
+          readme: "./README.md"
