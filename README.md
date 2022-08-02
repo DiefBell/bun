@@ -20,6 +20,8 @@ Today, bun's primary focus is bun.js: bun's JavaScript runtime.
 
 ## Install
 
+Some small change :)
+
 Native: (macOS x64 & Silicon, Linux x64, Windows Subsystem for Linux)
 
 ```sh
